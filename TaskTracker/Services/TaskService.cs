@@ -22,6 +22,7 @@ namespace TaskTracker.Services
             nextId++;
             return task;
         }
+        
 
         public List<TaskItem> GetAllTasks()
         {
@@ -83,6 +84,20 @@ namespace TaskTracker.Services
                     result.Add(tasks[i]);
                 }
             }
+            return result;
+        }
+        public List<TaskItem> GetTasksByPriority(TaskPriority priority)
+        {
+            List<TaskItem> result = new List<TaskItem>();
+
+            for (int i = 0; i < tasks.Count; i++)
+            {
+                if (tasks[i].Priority == priority)
+                {
+                    result.Add(tasks[i]);
+                }
+            }
+
             return result;
         }
 
